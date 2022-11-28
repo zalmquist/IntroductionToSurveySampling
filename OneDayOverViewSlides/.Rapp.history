@@ -1,0 +1,691 @@
+library(lohrData)#
+data(agsrs)#
+data(agpop)#
+m<-match(agsrs$ACRES92,agpop$ACRES92)#
+#
+### Visual demonstration#
+head(cbind(agsrs$ACRES92,agpop$ACRES92[m]))
+reg<-agpop$REGION[m]#
+wacrs<-agsrs$ACRES92[reg=="W"]#
+m<-mean(wacrs)#
+m#
+s2<-var(wacrs)#
+s2#
+se.wacrs<-sqrt((1-300/3078)*(300/39)*(38/299)*(s2/39))#
+se.wacrs#
+#
+##95 CI#
+m+qnorm(.05/2,lower.tail=TRUE)*se.wacrs
+se.wacrs
+m
+x<-as.numeric(reg=="W")#
+u<-x*y#
+t_yd<-3078*mean(u)#
+t_yd
+1 if y_i is in western US, 0 o.w.#
+x<-as.numeric(reg=="W")#
+y<-agsrs$ACRES92#
+u<-x*y#
+t_yd<-3078*mean(u)#
+t_yd
+sd(u)
+1 if y_i is in western US, 0 o.w.#
+x<-as.numeric(reg=="W")#
+y<-agsrs$ACRES92#
+u<-x*y#
+su2<-var(u)#
+t_yd<-3078*mean(u)#
+t_yd#
+se.tyd<-3078*sqrt((1-300/3078)*(su2/300))#
+se.tyd
+m+qt(.05/2,300-2,lower.tail=TRUE)*se.wacrs
+m+qt(.05/2,300-,lower.tail=TRUE)*se.wacrs
+m+qt(.05/2,300-1,lower.tail=TRUE)*se.wacrs
+m+qt(.05/2,300-1,lower.tail=TRUE)*se.wacrs#
+m+qt(.05/2,300-1,lower.tail=FALSE)*se.wacrs
+CV<-se.wacrs/m
+CV
+rm(list=ls())
+library(lohrData)#
+data(agsrs)#
+data(agpop)#
+m<-match(agsrs$ACRES92,agpop$ACRES92)
+m
+head(cbind(agsrs$ACRES92,agpop$ACRES92[m]))
+reg<-agpop$REGION[m]
+table(reg)
+x<-as.numeric(reg=="W")
+y<-agsrs$ACRES92
+x
+y
+u<-x*y
+t<-3078*mean(u)
+t
+se.t<-3078*sqrt((1-300/3078)*(var(u)/300))
+se.t
+t+qt(0.1/2,300-1,lower.tail=TRUE)*se.t
+t+qt(0.1/2,300-1,lower.tail=FALSE)*se.t
+mean(u)+qt(0.1/2,300-1,lower.tail=TRUE)*se.t/3078
+mean(u)+qt(0.1/2,300-1,lower.tail=TRUE==FALSE)*se.t/3078
+library(lohrData)
+help(package=lohrData)
+photo.x<-c(10,12,7,13,13,6,17,16,15,10,14,12,10,5,12,10,10,9,6,11,7,9,11,10,10)
+mean(photo.x)
+photo.y<-c(15,14,9,14,8,5,18,15,13,15,11,15,12,8,13,9,11,12,9,12,13,11,10,9,8)
+length(photo.y)
+length(photo.x)
+mean(photo.y)
+photo.x<-c(10,12,7,13,13,6,17,16,15,10,14,12,10,5,#
+12,10,10,9,6,11,7,9,11,10,10)#
+photo.y<-c(15,14,9,14,8,5,18,15,13,15,11,15,12,8,#
+13,9,11,12,9,12,13,11,10,9,8)#
+photo<-data.frame(x=photo.x,y=photo.y)
+photo
+help(matrix)
+desc<-matrix(#
+c(mean(photo$x),#
+mean(photo$y),#
+sd(photo$x),#
+sd(photo$y)),by.row=TRUE,nc=2,dimnames=list(c("x","y"),c("Mean","SD")))
+help(matrix)
+desc<-matrix(#
+c(mean(photo$x),#
+mean(photo$y),#
+sd(photo$x),#
+sd(photo$y)),byrow=TRUE,nc=2,#
+dimnames=list(c("x","y"),c("Mean","SD")))
+desc
+desc<-matrix(#
+c(mean(photo$x),#
+mean(photo$y),#
+sd(photo$x),#
+sd(photo$y)),byrow=FALSE,nc=2,#
+dimnames=list(c("x","y"),c("Mean","SD")))
+desc
+min(photo)
+plot(photo$x,photo$y,pch=19,cex=.5)#
+l<-lm(y~x,data=photo)#
+curve(coef(l)[1]+coef(l)[2]*x,from=min(photo),to=max(photo),add=TRUE)
+se.yreg<-sqrt((1-length(photo$y)/100)*(var(photo$y)/25)*(1-cor(photo$y,photo$x)))
+se.yreg
+se.yreg<-sqrt((1-length(photo$y)/100)*(var(photo$y))*(1-cor(photo$y,photo$x)))
+se.reg
+se.yreg
+se.yreg<-sqrt((1-length(photo$y)/100)*(var(photo$y)/25)*(1-cor(photo$y,photo$x)^2))#
+ se.yreg
+se.ybar<-sqrt((1-length(photo$y)/100)*(var(photo$y)/25)))#
+ se.ybar
+se.ybar<-sqrt((1-length(photo$y)/100)*(var(photo$y)/25))#
+ se.ybar
+library(lohrData)
+data(agsrs)
+ls()
+head(agsrs)
+rm(list=ls())
+library(lohrData)
+data(agsrs)
+data1 = subset(agsrs, acres87 < 600)  # the domain where counties has fewer than 600 famrs#
+data2 = subset(agsrs, acres87 >= 600) # the domain where counties has 600 or more famrs
+data1 = subset(agsrs, acres87 < 600)
+help(subset)
+ls()
+head(agsrs)
+data1 = subset(agsrs, ACRES87 < 600)  # the domain where counties has fewer than 600 famrs#
+data2 = subset(agsrs, ACRES87 >= 600) # the domain where counties has 600 or more famrs
+data1
+x = data2$acres87#
+y = data2$acres92#
+u = x*y
+u
+x
+x = data2$ACRES87#
+y = data2$ACRES92#
+u = x*y
+x
+y
+pop1<-rpois(1000,5)#
+pop2<-rpois(5000,10)
+pop1
+pop2
+pop1<-rpois(1000,5)#
+pop2<-rpois(5000,10)#
+pop<-c(pop1,pop2)#
+s<-sample(pop,300)
+s
+mean(s)
+x1<-as.numeric(s<=1000)#
+x2<-as.numeric(s>1000)
+x1
+x2
+pop1<-rpois(1000,5)#
+pop2<-rpois(5000,10)#
+pop<-c(pop1,pop2)#
+s<-sample(1:length(pop),300)#
+y<-pop[s]#
+#### Post stratification estimator#
+x1<-as.numeric(s<=1000)#
+x2<-as.numeric(s>1000)
+x1
+x2
+x1+x2
+sum(x1+x2)
+Check #
+sum(x1+x2)==300
+pop1<-rpois(1000,5)#
+pop2<-rpois(5000,10)#
+pop<-c(pop1,pop2)#
+s<-sample(1:length(pop),300)#
+y<-pop[s]#
+#### Post stratification estimator#
+x1<-as.numeric(s<=1000)#
+x2<-as.numeric(s>1000)#
+#
+## Check #
+sum(x1+x2)==300#
+### Build u#
+u1<-y*x1#
+u2<-y*x2#
+#
+N1<-1000#
+N2<-5000#
+#
+th1_hat<-(6000/300)*sum(u1)#
+th2_hat<-(6000/300)*sum(u1)
+th1_hat
+th2_hat
+th2_hat<-(6000/300)*sum(u2)#
+th2_hat
+sum(pop1)
+sum(pop2)
+s1<-sd(u1)#
+s3<-sd(u2)#
+#
+v.ybar.post<-(1-300/6000)*((1000/6000)*s1^2/300+(5000/6000)*s2^2/300)
+s1<-sd(u1)#
+s2<-sd(u2)#
+#
+v.ybar.post<-(1-300/6000)*((1000/6000)*s1^2/300+(5000/6000)*s2^2/300)
+v.ybar.post
+s1<-sd(y[x1==1])#
+s2<-sd(y[x2==1])#
+#
+v.ybar.post<-(1-300/6000)*((1000/6000)*s1^2/300+(5000/6000)*s2^2/300)
+set.seed(34567)#
+pop1<-rpois(1000,5)#
+pop2<-rpois(5000,10)#
+pop<-c(pop1,pop2)#
+s<-sample(1:length(pop),300)#
+y<-pop[s]#
+#### Post stratification estimator#
+x1<-as.numeric(s<=1000)#
+x2<-as.numeric(s>1000)#
+#
+## Check #
+sum(x1+x2)==300#
+### Build u#
+u1<-y*x1#
+u2<-y*x2#
+#
+N1<-1000#
+N2<-5000#
+#
+th1_hat<-(6000/300)*sum(u1)#
+th1_hat#
+th2_hat<-(6000/300)*sum(u2)#
+th2_hat#
+#
+that_post<-th1+th2#
+that_post#
+ybar_post<-(th1+th2)/6000#
+#
+s1<-sd(y[x1==1])#
+s2<-sd(y[x2==1])#
+#
+v.ybar.post<-(1-300/6000)*((1000/6000)*s1^2/300+(5000/6000)*s2^2/300)#
+v.ybar.post
+set.seed(34567)#
+pop1<-rpois(1000,5)#
+pop2<-rpois(5000,10)#
+pop<-c(pop1,pop2)#
+s<-sample(1:length(pop),300)#
+y<-pop[s]#
+#### Post stratification estimator#
+x1<-as.numeric(s<=1000)#
+x2<-as.numeric(s>1000)#
+#
+## Check #
+sum(x1+x2)==300#
+### Build u#
+u1<-y*x1#
+u2<-y*x2#
+#
+N1<-1000#
+N2<-5000#
+#
+t1_hat<-(6000/300)*sum(u1)#
+t1_hat#
+t2_hat<-(6000/300)*sum(u2)#
+t2_hat#
+#
+that_post<-t1_hat+t2_hat#
+that_post#
+ybar_post<-(th1+th2)/6000#
+#
+s1<-sd(y[x1==1])#
+s2<-sd(y[x2==1])#
+#
+v.ybar.post<-(1-300/6000)*((1000/6000)*s1^2/300+(5000/6000)*s2^2/300)#
+v.ybar.post
+set.seed(34567)#
+pop1<-rpois(1000,5)#
+pop2<-rpois(5000,10)#
+pop<-c(pop1,pop2)#
+s<-sample(1:length(pop),300)#
+y<-pop[s]#
+#### Post stratification estimator#
+x1<-as.numeric(s<=1000)#
+x2<-as.numeric(s>1000)#
+#
+## Check #
+sum(x1+x2)==300#
+### Build u#
+u1<-y*x1#
+u2<-y*x2#
+#
+N1<-1000#
+N2<-5000#
+#
+t1_hat<-(6000/300)*sum(u1)#
+t1_hat#
+t2_hat<-(6000/300)*sum(u2)#
+t2_hat#
+#
+that_post<-t1_hat+t2_hat#
+that_post#
+ybar_post<-(t1_hat+t2_jat)/6000#
+#
+s1<-sd(y[x1==1])#
+s2<-sd(y[x2==1])#
+#
+v.ybar.post<-(1-300/6000)*((1000/6000)*s1^2/300+(5000/6000)*s2^2/300)#
+v.ybar.post
+set.seed(34567)#
+pop1<-rpois(1000,5)#
+pop2<-rpois(5000,10)#
+pop<-c(pop1,pop2)#
+s<-sample(1:length(pop),300)#
+y<-pop[s]#
+#### Post stratification estimator#
+x1<-as.numeric(s<=1000)#
+x2<-as.numeric(s>1000)#
+#
+## Check #
+sum(x1+x2)==300#
+### Build u#
+u1<-y*x1#
+u2<-y*x2#
+#
+N1<-1000#
+N2<-5000#
+#
+t1_hat<-(6000/300)*sum(u1)#
+t1_hat#
+t2_hat<-(6000/300)*sum(u2)#
+t2_hat#
+#
+that_post<-t1_hat+t2_hat#
+that_post#
+ybar_post<-(t1_hat+t2_hat)/6000#
+#
+s1<-sd(y[x1==1])#
+s2<-sd(y[x2==1])#
+#
+v.ybar.post<-(1-300/6000)*((1000/6000)*s1^2/300+(5000/6000)*s2^2/300)#
+v.ybar.post
+6000*mean(y)
+t_ypost<- (1000/N1_hat)*tu1_hat+(5000/N2_hat)*tu2_hat#
+t_ypost
+set.seed(34567)#
+pop1<-rpois(1000,5)#
+pop2<-rpois(5000,10)#
+pop<-c(pop1,pop2)#
+s<-sample(1:length(pop),300)#
+y<-pop[s]#
+#### Post stratification estimator#
+x1<-as.numeric(s<=1000)#
+x2<-as.numeric(s>1000)#
+table(x1)#
+table(x2)#
+## Check #
+sum(x1+x2)==300#
+### Build u#
+u1<-y*x1#
+u2<-y*x2#
+#
+N1<-1000#
+N2<-5000#
+#
+tu1_hat<-(6000/300)*sum(u1)#
+tu1_hat#
+tu2_hat<-(6000/300)*sum(u2)#
+t2_hat#
+#
+N1_hat<-6000*mean(x1)#
+N1_hat#
+N2_hat<-6000*mean(x2)#
+N2_hat#
+#
+t_ypost<- (1000/N1_hat)*tu1_hat+(5000/N2_hat)*tu2_hat#
+t_ypost
+t_ypost<- (1000/N1_hat)*tu1_hat+(5000/N2_hat)*tu2_hat#
+t_ypost#
+#
+t_srs<-6000*mean(y)#
+t_srs
+ybar.post<-(1000/6000)*mean(y[x1==1])+(5000/6000)*mean(y[x1==1])#
+ybar.post#
+#
+y.srs<-mean(y)#
+y.srs
+t_ypost/6000
+t_ypost<- (1000/N1_hat)*tu1_hat+(5000/N2_hat)*tu2_hat#
+t_ypost#
+#
+t_srs<-6000*mean(y)#
+t_srs#
+#
+ybar.post<-(1000/6000)*mean(y[x1==1])+(5000/6000)*mean(y[x1==1])#
+ybar.post
+ybar.post<-(1000/6000)*mean(y[x1==1])+(5000/6000)*mean(y[x1==2])#
+ybar.post#
+#
+y.srs<-mean(y)#
+y.srs
+ybar.post<-(1000/6000)*mean(y[x1==1])+(5000/6000)*mean(y[x2==1])#
+ybar.post
+ybar.post*6000
+t_ypost/6000
+library(survey)#
+data(api)#
+clus2_design<-svydesign(id=~dnum+snum,fpc=~fpc1+fpc2,data=apiclus2)#
+pop.types<-data.frame(stype=c("E","H","M"),Freq=c(4421,755,1018))#
+ps_design<-postStratify(clus2_design, strata=~stype,population=pop.types)#
+svytotal(~=enroll, clus2_design,na.rm=TRUE)#
+svytotal(~enroll,ps_design,na.rm=TRUE)#
+svymean(~api00,clus2_design)#
+svymean(~api00,ps_design)
+library(survey)#
+data(api)#
+clus2_design<-svydesign(id=~dnum+snum,fpc=~fpc1+fpc2,data=apiclus2)#
+pop.types<-data.frame(stype=c("E","H","M"),Freq=c(4421,755,1018))#
+ps_design<-postStratify(clus2_design, strata=~stype,population=pop.types)#
+svytotal(~enroll, clus2_design,na.rm=TRUE)#
+svytotal(~enroll,ps_design,na.rm=TRUE)#
+svymean(~api00,clus2_design)#
+svymean(~api00,ps_design)
+help(api)
+help(optim)
+x<-rnorm(100,10,2)#
+y<-1+.5*x+rnorm(100)#
+#
+error<-function(b0,b1){#
+-sum((y-(b0+b1*x))^2)#
+}#
+LSE<-optim(c(0,0),error,hessian=TRUE)
+error(1,1)
+help(optim)
+LSE<-optim(par=c(0,0),fn=error,hessian=TRUE)
+x<-rnorm(100,10,2)#
+y<-1+.5*x+rnorm(100)#
+#
+error<-function(b){#
+b0<-b[1]#
+b1<-b[2]#
+-sum((y-(b0+b1*x))^2)#
+}#
+LSE<-optim(par=c(0,0),fn=error,hessian=TRUE)
+LSE
+x<-rnorm(100,10,2)#
+y<-1+.5*x+rnorm(100)#
+#
+error<-function(b){#
+b0<-b[1]#
+b1<-b[2]#
+sum((y-(b0+b1*x))^2)#
+}#
+LSE<-optim(par=c(0,0),fn=error,hessian=TRUE)
+LSE
+lm(y~x)
+vcovar(lm(y~x))
+names(lm(y~x))
+diag(LSE$hessian)
+summary(lm(y~x))
+sqrt(diag(solve(LSE$hessian)))
+LSE$par
+sqrt(diag((LSE$hessian)))
+sqrt(diag((LSE$hessian)^(-1)))
+sqrt(diag(solve(LSE$hessian)))
+sqrt(diag(solve(-LSE$hessian)))
+LSE$hessian
+pop.ctband<-data.frame(CTBAND=1:9, Freq=c(515672,547548,351599,291425,#
+266257,147851,87767,9190,19670))#
+pop.tenure<-data.frame(TENURE=1:4,#
+Freq=c(1459205,493237,128189,156348))#
+frs.raked<-rake(frs.des, sample=list(~CTBAND,~TENURE),#
+population=list(pop.ctband,pop.tenure))#
+svymean(~HHINC,frs.raked)#
+svymean(~HHINC,subset(frs.raked,DEPCHLDH>0))#
+svymean(~HHINC,subset(frs.raked,DEPCHLDH>0 & ADULT==1))
+pop.ctband<-data.frame(CTBAND=1:9, Freq=c(515672,547548,351599,291425,#
+266257,147851,87767,9190,19670))
+pop.tenure<-data.frame(TENURE=1:4,#
+Freq=c(1459205,493237,128189,156348))
+help(frs)
+data(frs)
+help(rake)
+data(api)#
+dclus1 <- svydesign(id=~dnum, weights=~pw, data=apiclus1, fpc=~fpc)#
+rclus1 <- as.svrepdesign(dclus1)#
+#
+svymean(~api00, rclus1)#
+svytotal(~enroll, rclus1)#
+#
+## population marginal totals for each stratum#
+pop.types <- data.frame(stype=c("E","H","M"), Freq=c(4421,755,1018))#
+pop.schwide <- data.frame(sch.wide=c("No","Yes"), Freq=c(1072,5122))#
+#
+rclus1r <- rake(rclus1, list(~stype,~sch.wide), list(pop.types, pop.schwide))#
+#
+svymean(~api00, rclus1r)#
+svytotal(~enroll, rclus1r)#
+#
+## marginal totals correspond to population#
+xtabs(~stype, apipop)#
+svytable(~stype, rclus1r, round=TRUE)#
+xtabs(~sch.wide, apipop)#
+svytable(~sch.wide, rclus1r, round=TRUE)
+data(frs)
+help(package=survey)
+load("http://www.restore.ac.uk/PEAS/ex1datafiles/data/ex1.RData")
+load("load('~/Documents/Classes/Stat5201/Material/Lectures/Lecture_26/ex1.RData')")
+load('~/Documents/Classes/Stat5201/Material/Lectures/Lecture_26/ex1.RData')"
+load('~/Documents/Classes/Stat5201/Material/Lectures/Lecture_26/ex1.RData')
+ls()
+head(frs)
+frs.des<-svydesign(id~PSU,weights=~GROSS2,data=frs)#
+pop.ctband<-data.frame(CTBAND=1:9, Freq=c(515672,547548,351599,291425,#
+266257,147851,87767,9190,19670))#
+pop.tenure<-data.frame(TENURE=1:4,#
+Freq=c(1459205,493237,128189,156348))#
+frs.raked<-rake(frs.des, sample=list(~CTBAND,~TENURE),#
+population=list(pop.ctband,pop.tenure))#
+svymean(~HHINC,frs.raked)#
+svymean(~HHINC,subset(frs.raked,DEPCHLDH>0))#
+svymean(~HHINC,subset(frs.raked,DEPCHLDH>0 & ADULT==1))
+frs.des<-svydesign(id=~PSU,weights=~GROSS2,data=frs)
+pop.ctband<-data.frame(CTBAND=1:9, Freq=c(515672,547548,351599,291425,#
+266257,147851,87767,9190,19670))#
+pop.tenure<-data.frame(TENURE=1:4,#
+Freq=c(1459205,493237,128189,156348))#
+frs.raked<-rake(frs.des, sample=list(~CTBAND,~TENURE),#
+population=list(pop.ctband,pop.tenure))#
+svymean(~HHINC,frs.raked)#
+svymean(~HHINC,subset(frs.raked,DEPCHLDH>0))#
+svymean(~HHINC,subset(frs.raked,DEPCHLDH>0 & ADULT==1))
+head(frs)
+svymean(~HHINC,subset(frs.raked,DEPCHLDH>0 & ADULTH==1))
+library(UScensus2010counties)
+library(UScensus2010county)
+data(minnesota.county10)
+ls()
+minnesota.county10@data[1:6,1:10]
+names(minnesota.county10)
+help(minnesota.county10)
+help(raking)
+help(rake)
+library(survey)
+help(rake)
+province <-#
+  read.table( text =#
+		"id str clu wt ue91 lab91 poststr gwt postwt sruv srcvs#
+		  1 1 1 4 4123 33786 1 .5833 2.333 .25 .43#
+		  2 1 4 4 760 5919 1 .5833 2.333 .25 .43#
+		  3 1 5 4 721 4930 1 .5833 2.333 .25 .43#
+		  4 1 15 4 142 675 2 1.2500 5.0000 .25 .20#
+		  5 1 18 4 187 1448 2 1.2500 5.0000 .25 .20#
+		  6 1 26 4 331 2543 2 1.2500 5.0000 .25 .20#
+		  7 1 30 4 127 1084 2 1.2500 5.0000 .25 .20#
+		  8 1 31 4 219 1330 2 1.2500 5.0000 .25 .20" ,#
+		header = TRUE#
+	)
+library(UScensus2000)
+data(minnesota.tract)
+ls()
+head(minnestoa.tract@data)
+head(minnestota.tract@data)
+head(minnesota@data)
+head(minnesota.tract@data)
+mn<-minnesota.tract@data
+head(mn)
+head(mn[,1:6])
+class(mn$state)
+t<-paste(as.character(mn$state),as.character(mn$county),as.character(tract))
+t<-paste(as.character(mn$state),as.character(mn$county),as.character(mn$tract))
+table(nchar(as.character(mn$tract)))
+tract<-as.character(mn$tract)
+tract[nchar(tract)==4]<-paste("00",tract[nchar(tract)==4],sep="")
+fips<-paste(as.character(mn$state),as.character(mn$county),tract)
+mn<-cbind(fips,mn[,4LNCOL(mn)])
+mn<-cbind(fips,mn[,4:LNCOL(mn)])
+mn<-cbind(fips,mn[,4:NCOL(mn)])
+head(mn[,1:6])
+mn<-minnesota.tract@data
+fips<-paste(as.character(mn$state),as.character(mn$county),tract,sep="")
+mn<-cbind(fips,mn[,4:NCOL(mn)])
+head(mn)
+head(mn[,1:6])
+help(minnesota.tract)
+save(mn,file="mnCensusData.rda")
+library(survey)
+help(nhanes)
+data(data(nhanes))
+data(nhanes)
+ls()
+head(nhanes)
+data(nhanesii)
+data(nhanes2)
+help(nhanes)
+library(maps)
+library(UScensus2010county)
+library(UScensus2010)
+help(package=UScensus2010)
+data(states.names)
+ls()
+states.names
+mainland<-states.names[-which(states.names%in%c("hawaii","alaska"))]
+mainland
+install.packages("sampling")
+library(sampling)
+help(clustering)
+help(cluster)
+data(swissmunicipalities)
+help(swissmunicipalities)
+library(lohrData)
+help(lohrData)
+setwd("~/Documents/Classes/Stat5201/Material/Lectures/Lecture_30")
+X<-read.table("cluspop1.txt")
+X
+names(X)#
+X#
+foo<-split(yval,clmemb)#
+foo#
+foo[[1]]#
+nclus<-length(foo)#
+nclus#
+dum<-split(clsize,clmemb)#
+mi<-sapply(dum,length)#
+mi#
+Mi<-sapply(dum,mean)#
+Mi#
+ssufpc<-1-mi/Mi#
+clusmean<-sapply(foo,mean)#
+clusvar<-sapply(foo,var)#
+N<-15#
+that<-(N/nclus)*sum(Mi*clusmean)#
+ybarratio<-sum(Mi*clusmean)/sum(Mi)#
+s2t<-var(Mi*clusmean)#
+varterm2<-sum(ssufpc*(Mi^2)*clusvar/mi)#
+s2r<-var(Mi*(clusmean - ybarratio))#
+varthat<-N^2*(1-nclus/N)*s2t/nclus + (N/nclus)*varterm2#
+varybarr<-( (1 - nclus/N)*s2r/nclus + varterm2/(nclus*N) )/(mean(Mi))^2#
+list(that=that,varthat=varthat,yratio=ybarratio,varyratio=varybarr)
+help(split)
+X<-read.table("cluspop1.txt")#
+attach(X)#
+names(X)#
+X#
+foo<-split(yval,clmemb)#
+foo#
+foo[[1]]#
+nclus<-length(foo)#
+nclus#
+dum<-split(clsize,clmemb)#
+mi<-sapply(dum,length)#
+mi#
+Mi<-sapply(dum,mean)#
+Mi#
+ssufpc<-1-mi/Mi#
+clusmean<-sapply(foo,mean)#
+clusvar<-sapply(foo,var)#
+N<-15#
+that<-(N/nclus)*sum(Mi*clusmean)#
+ybarratio<-sum(Mi*clusmean)/sum(Mi)#
+s2t<-var(Mi*clusmean)#
+varterm2<-sum(ssufpc*(Mi^2)*clusvar/mi)#
+s2r<-var(Mi*(clusmean - ybarratio))#
+varthat<-N^2*(1-nclus/N)*s2t/nclus + (N/nclus)*varterm2#
+varybarr<-( (1 - nclus/N)*s2r/nclus + varterm2/(nclus*N) )/(mean(Mi))^2#
+list(that=that,varthat=varthat,yratio=ybarratio,varyratio=varybarr)
+help(cluster)
+cluster(swissmunicipalities,100,method="srswor")
+data(swissmunicipalities)#
+#
+cluster(swissmunicipalities,100,method="srswor")
+help(cluster)
+head(swissmunicipalities)
+cluster(swissmunicipalities,"REG",100,method="srswor")
+cluster(swissmunicipalities,"REG",5,method="srswor")
+help(cluster)
+table(swissmunicipalities$REG)
+c<-cluster(swissmunicipalities,"REG",1,method="srswor")
+c
+head(c)
+table(c$REG)
+data(swissmunicipalities)#
+#
+table(swissmunicipalities$REG)#
+#
+c<-cluster(swissmunicipalities,"REG",2,method="srswor")#
+#
+head(c)#
+table(c$REG)

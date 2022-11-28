@@ -1,0 +1,12 @@
+\beamer@sectionintoc {2}{Cluster Sampling}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Cluster Sampling Notation}{4}{0}{1}
+\beamer@subsectionintoc {2}{2}{One-Stage Cluster Sampling with Fixed M}{8}{0}{1}
+\beamer@subsectionintoc {2}{3}{Clusters of Equal Sizes: Theory}{12}{0}{1}
+\beamer@subsectionintoc {2}{4}{ICC}{15}{0}{1}
+\beamer@subsectionintoc {2}{5}{Clusters of Unequal Sizes (One-stage)}{20}{0}{1}
+\beamer@subsectionintoc {2}{6}{Relationship to Ratio Estimation (One-Stage)}{23}{0}{1}
+\beamer@subsectionintoc {2}{7}{Two-Stage Cluster Sampling}{29}{0}{1}
+\beamer@sectionintoc {3}{Unequal-Probability Sampling}{43}{0}{2}
+\beamer@sectionintoc {4}{Probability Proportional to Size (PPS)}{45}{0}{3}
+\beamer@subsectionintoc {4}{1}{Unequal-Probability Sampling Without Replacement}{53}{0}{3}
+\beamer@subsectionintoc {4}{2}{Cluster Sampling Unequal-Probability Sampling (Two-Stage)}{60}{0}{3}

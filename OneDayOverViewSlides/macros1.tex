@@ -1,0 +1,21 @@
+%in the definition of a new command you cannot use numbers
+%see page 192 of Lamport
+\newcommand{\ypop}{y=(y_1,y_2,\ldots,y_N)}
+\newcommand{\ytot}{\sum_{i=1}^N y_i}
+\newcommand{\ymn}{\sum_{i=1}^N y_i/N}
+\newcommand{\ypva}{\sigma^2(y)}
+\newcommand{\ypvb}{\sum_{i=1}^N(y_i - \bar{Y})^2/(N-1)}
+\newcommand{\ysma}{y_{smp}}
+\newcommand{\ysmb}{\{y_i\,:\,i\in smp\}}
+\newcommand{\ybara}{\bar{y}_{smp}}
+\newcommand{\ybarb}{\sum_{i \in smp} y_i/n}
+
+\newcommand{\fred}{x+y=2}
+\newcommand{\sally}[1]{x+y=#1}
+\newcommand{\bill}[2]{x+ #1=#2}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+

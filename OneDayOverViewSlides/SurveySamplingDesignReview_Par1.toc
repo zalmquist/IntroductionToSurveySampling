@@ -1,0 +1,27 @@
+\beamer@sectionintoc {2}{Simple Random Sampling}{4}{0}{1}
+\beamer@subsectionintoc {2}{1}{Simple Random Sampling Definitions}{20}{0}{1}
+\beamer@subsectionintoc {2}{2}{Simple Random Sample without Replacement}{21}{0}{1}
+\beamer@subsectionintoc {2}{3}{SRS with Replacement}{22}{0}{1}
+\beamer@subsectionintoc {2}{4}{SRS Weights}{23}{0}{1}
+\beamer@subsectionintoc {2}{5}{Estimation}{26}{0}{1}
+\beamer@subsectionintoc {2}{6}{Confidence Interval}{32}{0}{1}
+\beamer@subsectionintoc {2}{7}{Sample Size Estimation}{36}{0}{1}
+\beamer@subsectionintoc {2}{8}{Systematic Sampling}{49}{0}{1}
+\beamer@subsectionintoc {2}{9}{Design-based and Model-based Framework}{53}{0}{1}
+\beamer@subsectionintoc {2}{10}{Design-Based Approach}{55}{0}{1}
+\beamer@subsectionintoc {2}{11}{Model-based Approach}{72}{0}{1}
+\beamer@sectionintoc {3}{Stratified Random Sampling}{85}{0}{2}
+\beamer@subsectionintoc {3}{1}{Theory of Stratified Sampling}{94}{0}{2}
+\beamer@subsectionintoc {3}{2}{Example: Homework Hours}{97}{0}{2}
+\beamer@subsectionintoc {3}{3}{Review of Stratified Random Sampling Estimators}{106}{0}{2}
+\beamer@subsectionintoc {3}{4}{Stratification Principle}{116}{0}{2}
+\beamer@subsectionintoc {3}{5}{Allocation in Stratified Random Sampling}{118}{0}{2}
+\beamer@subsectionintoc {3}{6}{Sample Size Selection for a given Precision}{127}{0}{2}
+\beamer@sectionintoc {4}{Regression and Ratio Estimation}{134}{0}{3}
+\beamer@subsectionintoc {4}{1}{Review of Ratio Estimator and its Properties}{135}{0}{3}
+\beamer@subsectionintoc {4}{2}{Ratio Estimation with Proportions}{153}{0}{3}
+\beamer@subsectionintoc {4}{3}{Ratio Estimation Using Weight Adjustments}{159}{0}{3}
+\beamer@subsectionintoc {4}{4}{Regression Estimation in SRS}{167}{0}{3}
+\beamer@subsectionintoc {4}{5}{Example: Trees}{174}{0}{3}
+\beamer@subsectionintoc {4}{6}{Difference Estimation}{183}{0}{3}
+\beamer@subsectionintoc {4}{7}{Poststratification}{188}{0}{3}
